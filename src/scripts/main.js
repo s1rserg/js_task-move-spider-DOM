@@ -16,7 +16,7 @@ document.addEventListener('click', (e) => {
     clientY < wallCoords.top ||
     clientY > wallCoords.bottom ||
     clientX < wallCoords.left ||
-    clientY > wallCoords.right
+    clientX > wallCoords.right
   ) {
     return;
   }
@@ -24,8 +24,8 @@ document.addEventListener('click', (e) => {
   const spiderTop = clientY - wallCoords.top - wallBorder - spiderDim / 2;
   const spiderLeft = clientX - wallCoords.left - wallBorder - spiderDim / 2;
 
-  const maxSpiderTop = wallCoords.height - wallBorder * 2 - spiderDim;
-  const maxSpiderLeft = wallCoords.width - wallBorder * 2 - spiderDim;
+  const maxSpiderTop = wall.clientHeight - spiderDim;
+  const maxSpiderLeft = wall.clientWidth - spiderDim;
 
   spider.style.top = `${Math.max(0, Math.min(spiderTop, maxSpiderTop))}px`;
   spider.style.left = `${Math.max(0, Math.min(spiderLeft, maxSpiderLeft))}px`;
